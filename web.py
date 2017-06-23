@@ -23,7 +23,10 @@ for link in soup.find_all('img'):
         print(imag)
 
         imgSplit=os.path.split(imag)
-        imgNam = imgSplit[1]+".jpg"
+        if (imgSplit[1][-3:]!="gif"):
+            imgNam = imgSplit[1]+".jpg"
+        else:
+            imgNam = imgSplit[1]
         r2=requests.get(imag,headers=headers)
         # print(imgNam)
         with open(imgNam,"wb") as f:
