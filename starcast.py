@@ -17,14 +17,14 @@ increment =0
 for link in soup.find_all('img'):
 
     image = link.get("src")
-    imag = image.replace("image", "original")
+    imag = image
     # print(imag.find("http"))
     if(imag.find("http://mimgnews1.naver.net")==0):
-        print(imag)
+        # print(imag)
 
         idnexofQ = imag.index('?')
         imag = imag[:idnexofQ]
-        print("imagi"+imag)
+        print(imag)
 
         imgSplit = os.path.split(imag)
 
